@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" href="dijit/themes/claro/claro.css" media="screen">
+    <script src="dojo/dojo.js" ></script>
+</head>
+<body  class="claro">
+hi2
+        <script>
+            // See the using Custom Modules with a CDN Tutorial for more
+            // information on configuring Dojo for CDN usage
+            var dojoConfig = {
+                async: true,
+                dojoBlankHtmlUrl: location.pathname.replace(/\/[^/]+$/, "") + "/blank.html",
+                packages: [{
+                    name: "my",
+                    location: location.pathname.replace(/\/[^/]+$/, "") + "/"
+                }]
+            };
+        </script>
+
+<div data-dojo-type="my/SomeWidget">
+<p>This is arbitrary content!</p>
+<div data-dojo-type="dijit/form/Button">My Button</div>
+<p>More arbitrary content!</p>
+</div>
+
+
+
+        <script>
+            require([
+                "dojo/parser",
+                "my/SomeWidget",
+                "dijit/form/Button",
+            ], function(parser) {
+                // Invoke the dojo/parser
+                parser.parse();
+            });
+        </script>
+</body>
+</html>

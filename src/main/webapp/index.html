@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="dojo/dojo.js"></script>
+</head>
+<body>
+hi222
+
+<script>
+    require([
+        "dojo/parser",
+        "my/SomeWidget",
+        "dijit/form/Button",
+    ], function(parser) {
+        // Invoke the dojo/parser
+        parser.parse();
+    });
+</script>
+<div id="my-page"></div>
+
+<script>
+    require(['App'], function (App) {
+        new App({}, 'my-page');
+    });
+</script>
+
+</body>
+</html>
